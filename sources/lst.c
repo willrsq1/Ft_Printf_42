@@ -6,7 +6,7 @@
 /*   By: wruet-su <william.ruetsuquet@gmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 19:47:14 by wruet-su          #+#    #+#             */
-/*   Updated: 2023/04/30 02:30:08 by wruet-su         ###   ########.fr       */
+/*   Updated: 2023/05/02 10:36:45 by wruet-su         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,13 +88,17 @@ int	ft_print_lst(t_args *lst)
 {
 	int		count;
 	t_args	*first;
+	int		i;
 
 	first = lst;
 	lst = lst->next;
 	count = 0;
 	while (lst)
 	{
-		count += ft_print_lst_part_2(lst);
+		i = ft_print_lst_part_2(lst);
+		if (i == -1)
+			return (write(1, "Error\n", 7), -1);
+		count += i;
 		lst = lst->next;
 	}
 	ft_lst_free_all(first);

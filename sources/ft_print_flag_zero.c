@@ -6,7 +6,7 @@
 /*   By: wruet-su <william.ruetsuquet@gmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 13:56:55 by wruet-su          #+#    #+#             */
-/*   Updated: 2023/04/30 02:06:11 by wruet-su         ###   ########.fr       */
+/*   Updated: 2023/05/02 10:34:04 by wruet-su         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,11 +76,12 @@ int	ft_flag_zero(t_args *lst)
 	if (y > width || lst->type == 's')
 		return (ft_zero_part2(lst, width, y, i));
 	buff = malloc(width + 1);
+	if (!buff)
+		return (-1);
 	buff = ft_zero_part3(lst, buff, y, width);
 	y = 0;
 	if (lst->flags[0] == '.' && lst->buff[0] == '-' && ++y)
 		write(1, &lst->buff[0], 1);
 	write(1, buff, width);
-	free(buff);
-	return (width + y);
+	return (free(buff), width + y);
 }

@@ -6,7 +6,7 @@
 /*   By: wruet-su <william.ruetsuquet@gmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/30 01:36:36 by wruet-su          #+#    #+#             */
-/*   Updated: 2023/04/30 02:09:08 by wruet-su         ###   ########.fr       */
+/*   Updated: 2023/05/02 10:34:21 by wruet-su         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,8 @@ static int	ft_flag_minus_part2(t_args *lst, int width, int y)
 
 	i = -1;
 	buff = malloc(width + 1);
+	if (!buff)
+		return (-1);
 	i = -1;
 	while (++i < width + 1)
 		buff[i] = ' ';

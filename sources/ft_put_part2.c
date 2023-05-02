@@ -6,7 +6,7 @@
 /*   By: wruet-su <william.ruetsuquet@gmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/30 01:12:14 by wruet-su          #+#    #+#             */
-/*   Updated: 2023/04/30 02:14:55 by wruet-su         ###   ########.fr       */
+/*   Updated: 2023/05/02 10:35:09 by wruet-su         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ static char	*ft_putnbr_ptr_null(void)
 	char	*buffer;
 
 	buffer = malloc(8);
+	if (!buffer)
+		return (NULL);
 	buffer[0] = '(';
 	buffer[1] = 'n';
 	buffer[2] = 'i';

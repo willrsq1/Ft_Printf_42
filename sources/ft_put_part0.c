@@ -6,7 +6,7 @@
 /*   By: wruet-su <william.ruetsuquet@gmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 20:38:39 by wruet-su          #+#    #+#             */
-/*   Updated: 2023/04/30 02:06:37 by wruet-su         ###   ########.fr       */
+/*   Updated: 2023/05/02 10:34:49 by wruet-su         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ static char	*ft_string_null(void)
 	char	*buff;
 
 	buff = malloc(8);
+	if (!buff)
+		return (NULL);
 	buff[0] = '(';
 	buff[1] = 'n';
 	buff[2] = 'u';
